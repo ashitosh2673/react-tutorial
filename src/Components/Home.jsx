@@ -1,12 +1,23 @@
 import React, { Fragment, useState } from "react";
+import StylesTest from "./../CSS/home.css";
+import ModuleTest from "./ModuleTest";
+import Styles from "./../CSS/home.module.css";
 
 const Home = ({
   name,
   thisIsMyTestComponent = "Home Page",
   fruits,
   students,
+  tempValue,
 }) => {
   const [inputValue, setInputValue] = useState("");
+
+  // const [studentsList, setStudentsList] = useState({
+  //   students: [],
+  //   inputValue: "",
+  //   isComponetUpdate: false,
+  // });
+  // const [isComponetUpdate, setIsComponetUpdate] = useState(false);
   const onClickEventCatch = (e) => {
     console.log(e.target.innerText);
   };
@@ -16,28 +27,59 @@ const Home = ({
     setInputValue(e.target.value);
   };
 
+  //
+  //  1           - 4
+  // 2            - 1
+  // 3            - 2
+  //              - 3
   const studentList =
     thisIsMyTestComponent === "Home Page" &&
-    students?.map((student, index) =>
-      student.age > 24 ? (
+    students?.map(
+      (student, index) => (
+        // student.age > 24 ? (
         <li key={index} onClick={onClickEventCatch}>
           {" "}
           {student.name}'s age is {student.age}{" "}
         </li>
-      ) : null
+      )
+      // ) : null
     );
+
+  const ComponentStyle = {
+    color: "red",
+    backgroundColor: "yellow",
+    fontSize: "50px",
+  };
 
   return thisIsMyTestComponent !== "Home Page" ? (
     <>This not a home page</>
   ) : (
     <>
-      <h1>{name}</h1>
+      <h1
+        className={`${StylesTest.homebackground} home-background`}
+        style={ComponentStyle}
+      >
+        {name + "test"}
+      </h1>
       <>
         <h1>{thisIsMyTestComponent}</h1>
         <input type="text" onChange={onChageInput} />
 
         <label>{inputValue}</label>
-        <ul>{studentList}</ul>
+
+        <ul>
+          {thisIsMyTestComponent === "Home Page" &&
+            students?.map((student, index) =>
+              student.age > 24 ? (
+                <li key={student.id} onClick={onClickEventCatch}>
+                  {" "}
+                  {student.name}'s age is {student.age}{" "}
+                </li>
+              ) : null
+            )}
+        </ul>
+
+        <ModuleTest />
       </>
     </>
   );
