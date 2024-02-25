@@ -13,7 +13,7 @@ class Parent extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     console.log("Parent : Mounting ===> getDerivedStateFromProps");
-    // return null;
+    return null;
   }
 
   componentDidMount() {
@@ -29,7 +29,7 @@ class Parent extends React.Component {
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log("Parent : Updating ===> getSnapshotBeforeUpdate");
-    // return null;
+    return null;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {

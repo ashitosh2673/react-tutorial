@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import StylesTest from "./../CSS/home.css";
+import "./../CSS/home.css";
 import ModuleTest from "./ModuleTest";
 import Styles from "./../CSS/home.module.css";
 
@@ -56,8 +56,12 @@ const Home = ({
   ) : (
     <>
       <h1
-        className={`${StylesTest.homebackground} home-background`}
-        style={ComponentStyle}
+        className={`${Styles.homebackground} home-background`}
+        style={{
+          color: "red",
+          backgroundColor: "yellow",
+          fontSize: "50px",
+        }}
       >
         {name + "test"}
       </h1>
