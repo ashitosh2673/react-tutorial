@@ -18,10 +18,12 @@ class PureChildComponent extends PureComponent {
   }
 
   render() {
+    console.log("PureChildComponent ===> render", this.props.data);
     console.log("PureChildComponent ===> render");
     return (
       <div>
         <h1>This is Pure Child Component</h1>
+        <h1>Current Counter (Pure Child Component) is : {this.props.count} </h1>
       </div>
     );
   }
