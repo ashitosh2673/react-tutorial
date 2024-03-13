@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 const HookDemo5 = (props) => {
   //  useRef is used to access the DOM elements directly
@@ -13,6 +13,9 @@ const HookDemo5 = (props) => {
     inputRef2.current.value = "Finance Shaala";
   };
 
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
   const clearInput = () => {
     inputRef.current.value = "";
     inputRef2.current.value = "";

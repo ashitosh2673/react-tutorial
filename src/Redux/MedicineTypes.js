@@ -1,0 +1,2 @@
+export const BUY_MEDICINE = "BUY_MEDICINE";
+export const RETURN_MEDICINE = "RETURN_MEDICINE";

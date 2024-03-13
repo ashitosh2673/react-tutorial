@@ -5,6 +5,7 @@ import HookDemo2 from "../Hooks/HookDemo2";
 import HookDemo3 from "../Hooks/HookDemo3";
 import HookDemo4 from "../Hooks/HookDemo4";
 import HookDemo5 from "../Hooks/HookDemo5";
+import ParentContextComponent from "../Hooks/useContext/ParentContextComponent";
 
 const Home = (props) => {
   return (
@@ -18,8 +19,9 @@ const Home = (props) => {
         <HookDemo2 name={props.likes !== 10 ? "It Shaala" : "Test IT SHaala"} />
       )}
       <HookDemo3 /> */}
-      <HookDemo4 />
-      <HookDemo5 />
+      {/* <HookDemo4 />
+      <HookDemo5 /> */}
+      <ParentContextComponent name={"It Shaala"} />
     </div>
   );
 };

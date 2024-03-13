@@ -1,0 +1,19 @@
+1. Store : Medical Shop () - >  10 quantity  
+2. Action : BuyMedicine -> Customer 
+3. Reducer :  SHopkeeper -> Medicine -> customer -> store -> 9 quantity 
+
+
+
+
+
+
+Action                  Reducer                         Store
+            ===>>>                      =====>>>        
+Customer                SHopkeeper                      Medical Store
+
+
+
+Return 
+
+
+
