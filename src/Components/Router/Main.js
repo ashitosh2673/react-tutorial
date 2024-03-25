@@ -47,7 +47,7 @@ const Main = () => {
                 fontWeight: "900",
               }}
             >
-              <NavLink to="/about-us" activeClassName={"active"}>
+              <NavLink to="/about-us/1/1" activeClassName={"active"}>
                 About Us
               </NavLink>
             </li>

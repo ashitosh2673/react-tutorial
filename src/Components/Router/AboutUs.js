@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { BuyMedicine, ReturnMedicine } from "../../Redux/MedicalAction";
+import { useDispatch } from "react-redux";
 
 const AboutUs = () => {
   const { userId, departmentId } = useParams();
   const [userData, setUserData] = useState({});
   const history = useHistory();
   const medicineCount = useSelector((state) => state.medicineCount);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
@@ -30,6 +32,10 @@ const AboutUs = () => {
         User ID: {userId} and Department ID: {departmentId} and my medicine
         coubt is {medicineCount}
       </h3>{" "}
+      <button onClick={() => dispatch(BuyMedicine())}>Buy Medicine</button>
+      <button onClick={() => dispatch(ReturnMedicine())}>
+        Return Medicine
+      </button>
       <button onClick={() => fetchNextCustomerData()}>Click Me</button>
     </div>
   );
