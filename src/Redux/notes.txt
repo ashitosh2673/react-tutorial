@@ -17,3 +17,4 @@ Return
 
 
 
+Action -> Middleware (Async operation) -- Payload -> reducer ( this payload ) -> store 
